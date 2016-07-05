@@ -13,7 +13,7 @@ html {
 
 body {
     font-size: 1.6rem;
-    font-family: "Fira Sans", sans-serif;
+    font-family: Tahoma, Helvetica, Arial, "Microsoft Yahei","微软雅黑", STXihei, "华文细黑", sans-serif;
     color: #767070;
     background-color: #ffffff;
 }
@@ -76,7 +76,7 @@ Slider
     background-image: url(../../images/img-1.jpg);
 }
 .cd-slider li:nth-of-type(2) .image {
-    background-image: url(../../images/img-2.jpg);
+    background-image: url(../../images/xuanke.jpg);
 }
 .cd-slider li:nth-of-type(3) .image {
     background-image: url(../../images/img-3.jpg);
@@ -104,7 +104,7 @@ Slider
     margin-top: 1em;
     font-size: 1.3rem;
     color: #ffffff;
-    border-radius: 50em;
+    border-radius: 10em;
     -webkit-transition: background 0.3s;
     -moz-transition: background 0.3s;
     transition: background 0.3s;
@@ -264,6 +264,8 @@ Slider Navigation
     overflow: hidden;
     border: 1px solid #ffffff;
 }
+
+
 @media only screen and (min-width: 900px) {
     .cd-slider-navigation {
         padding: 0.5em 1em;
@@ -302,6 +304,11 @@ Slider Navigation
     .cd-slider-navigation li.selected a {
         background-color: transparent;
         color: #f3b96c;
+    }
+    
+    .cd-slider-navigation li.about a{
+        color: #e74c3c;
+        background-color: transparent;
     }
 }
 
