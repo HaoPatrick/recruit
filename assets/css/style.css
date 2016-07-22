@@ -39,6 +39,8 @@ hr {
     background-image: linear-gradient(to right,rgba(0,0,0,0.25),rgba(0,0,0,0));
 }
 
+
+
 /* --------------------------------
 
 Slider
@@ -147,6 +149,15 @@ Slider
 .cd-slider h2, .cd-slider p {
     line-height: 1.4;
 }
+
+
+
+.cd-logo {
+    width:25px;
+    margin-right:5px;
+}
+
+
 @media (min-width:    1000px) {
     .cd-slider li {
         pointer-events: none;
