@@ -48,13 +48,13 @@ $(document).ready(function ($) {
             var dotWrapper, dot;
             if (index == 0) {
                 dotWrapper = $('<li class="selected"></li>');
-            } else if (index == totalNum-1) {
-                dotWrapper=$('<li class="about"></li>')
+            } else if (index == totalNum - 1) {
+                dotWrapper = $('<li class="about"></li>')
             }
             else {
                 dotWrapper = $('<li></li>');
             }
-            dot =$('<a href="#0"></a>').appendTo(dotWrapper);
+            dot = $('<a href="#0"></a>').appendTo(dotWrapper);
             dotWrapper.appendTo(wrapper);
             var dotText = (index + 1 < 10) ? '0' + (index + 1) : index + 1;
             dot.text(dotText);

@@ -1,3 +1,11 @@
+/*
+
+Mobile First design
+Default for small width screen
+Break point at 700px
+
+*/
+
 /* --------------------------------
 
 Primary style
@@ -41,7 +49,7 @@ Slider
     height: 100vh;
     padding: 10px;
 }
-@media only screen and (min-width: 900px) {
+@media screen and (min-width: 700px) {
     .cd-slider-wrapper {
         padding: 30px;
     }
@@ -139,7 +147,7 @@ Slider
 .cd-slider h2, .cd-slider p {
     line-height: 1.4;
 }
-@media only screen and (min-width: 900px) {
+@media  (min-width: 700px) {
     .cd-slider li {
         pointer-events: none;
         z-index: 1;
@@ -226,7 +234,7 @@ Slider
         line-height: 2;
     }
 }
-@media only screen and (min-width: 1170px) {
+@media screen and (min-width: 1170px) {
     .cd-slider .content {
         padding: 0 90px;
     }
@@ -274,7 +282,7 @@ Slider Navigation
 }
 
 
-@media only screen and (min-width: 900px) {
+@media (min-width: 700px) {
     .cd-slider-navigation {
         padding: 0.5em 1em;
         background-color: rgba(0, 0, 0, 0.8);
@@ -313,7 +321,7 @@ Slider Navigation
         background-color: transparent;
         color: #f3b96c;
     }
-    
+
     .cd-slider-navigation li.about a{
         color: #e74c3c;
         background-color: transparent;
