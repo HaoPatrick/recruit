@@ -95,7 +95,7 @@ $(document).ready(function ($) {
 //    Control the background music
 
     var bgm=document.getElementById('cd-bgm');
-    var isPlaying=true;
+    var isPlaying=false;
     var stopButton=$('.stop-music');
     stopButton.on('click', function (event) {
         event.preventDefault();
