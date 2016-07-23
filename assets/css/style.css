@@ -339,3 +339,49 @@ Slider Navigation
     }
 }
 
+
+
+/* --------------------------------
+
+Transition
+
+-------------------------------- */
+
+.not-visible {
+    display: none;
+}
+
+
+
+
+
+
+/* --------------------------------
+
+Sign Up page
+
+-------------------------------- */
+
+.ef-signup-wrapper {
+    position: relative;
+    height: 100vh;
+    padding: 10px;
+}
+@media (min-width:    1000px) {
+    .ef-signup-wrapper {
+        padding: 30px;
+    }
+}
+
+form{
+    margin:80px;
+}
+
+form h2{
+    font-size:50px;
+    padding-bottom:20px;
+}
+
+form .ef-block{
+    padding-top:10px;
+}
