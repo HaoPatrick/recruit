@@ -76,14 +76,14 @@ $(document).ready(function ($) {
     function enableSwipe(container) {
         return (container.parents('.touch').length > 0);
     }
-    
-    signUPBtn=$('.btn');
-    signUPBtn.on('click',function (event) {
+
+    signUPBtn = $('.btn');
+    signUPBtn.on('click', function (event) {
         event.preventDefault();
         // $('.cd-slider-wrapper').addClass('not-visible');
         $('.cd-slider-wrapper').animate({
-            opacity:0
-        },1000,function () {
+            opacity: 0
+        }, 1000, function () {
             this.remove();
             $('.cd-signup-wrapper').removeClass('not-visible');
         });
@@ -91,4 +91,21 @@ $(document).ready(function ($) {
 
     });
 
+
+//    Control the background music
+
+    var bgm=document.getElementById('cd-bgm');
+    var isPlaying=true;
+    var stopButton=$('.stop-music');
+    stopButton.on('click', function (event) {
+        event.preventDefault();
+        if(isPlaying){
+            bgm.pause();
+            stopButton.css({"background":"url(../../images/play.svg)"});
+        }else {
+            bgm.play();
+            stopButton.css({"background":"url(../../images/stop.svg)"});
+        }
+        isPlaying=!isPlaying;
+    });
 });

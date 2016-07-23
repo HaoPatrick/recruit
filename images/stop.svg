@@ -1,0 +1,9 @@
+<svg style="transform: matrix(1.46, 0, 0, 1.46, 0, 0); backface-visibility: hidden; transform-origin: 50% 50% 0px; cursor: move; transition: transform 200ms ease-in-out 0s;" width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64">
+ <g>
+ <path d="M17.151,19.514v23.695c0,3.213,2.129,5.816,4.755,5.816c2.626,0,4.756-2.603,4.756-5.816V19.514 c0-3.211-2.13-5.816-4.756-5.816C19.28,13.697,17.151,16.303,17.151,19.514z">
+</path>
+ <path d="M44.1,13.697c-2.626,0-4.755,2.605-4.755,5.816v23.695c0,3.213,2.129,5.816,4.755,5.816c2.626,0,4.756-2.603,4.756-5.816 V19.514C48.855,16.303,46.726,13.697,44.1,13.697z">
+</path>
+ </g>
+ </svg>
+ 
