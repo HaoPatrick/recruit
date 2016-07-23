@@ -89,6 +89,6 @@ $(document).ready(function ($) {
         });
         // $('.cd-slider-wrapper').remove();
 
-    })
+    });
 
 });
