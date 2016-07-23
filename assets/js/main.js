@@ -85,7 +85,7 @@ $(document).ready(function ($) {
             opacity: 0
         }, 1000, function () {
             this.remove();
-            $('.cd-signup-wrapper').removeClass('not-visible');
+            $('.ef-signup-wrapper').removeClass('not-visible');
         });
         // $('.cd-slider-wrapper').remove();
 
