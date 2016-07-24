@@ -127,20 +127,47 @@ $(document).ready(function ($) {
     // TODO: Add animation to the transition.
     var inclination1 = $('#inclination1'), inclination2 = $('#inclination2');
     var question1 = $('#ef-question1'), question2 = $('#ef-question2');
+
+    // NOTICE: these 2 functions below also change the 'not-visible' class
+    function scroll_up(textarea) {
+        textarea.addClass('scroll-up');
+        setTimeout(function(ta) {
+            ta.addClass('not-visible');
+            ta.removeClass('scroll-up');
+        }, 300, textarea);
+    }
+
+    function scroll_down(textarea) {
+        textarea.addClass('scroll-down');
+        textarea.removeClass('not-visible');
+        setTimeout(function(ta) {
+            ta.removeClass('scroll-down');
+        }, 300, textarea);
+    }
+
     inclination1.change(function () {
         if (inclination1.val() == '快选一个吧') {
-            if (!question1.hasClass('not-visible')) question1.addClass('not-visible');
+            if (!question1.hasClass('not-visible')) {
+                scroll_up(question1);
+            }
             return;
         }
-        if (question1.hasClass('not-visible')) question1.removeClass('not-visible');
+        if (question1.hasClass('not-visible')) {
+            scroll_down(question1);
+        }
         document.getElementById('ef-question1-content').innerHTML = totalQuestions[inclination1.val()];
     });
+
     inclination2.change(function () {
         if (inclination2.val() == '快选一个吧') {
-            if (!question2.hasClass('not-visible')) question2.addClass('not-visible');
+            if (!question2.hasClass('not-visible')) {
+                scroll_up(question2);
+            }
             return;
         }
-        if (question2.hasClass('not-visible')) question2.removeClass('not-visible');
+        if (question2.hasClass('not-visible')) {
+            scroll_down(question2);
+        }
         document.getElementById('ef-question2-content').innerHTML = totalQuestions[inclination2.val()];
     })
 });
