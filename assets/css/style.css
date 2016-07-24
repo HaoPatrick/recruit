@@ -446,7 +446,10 @@ form legend {
 }
 
 form input:invalid {
-    background-color: rgba(231, 76, 60, 0.3);
+    background-color: rgba(231, 76, 60, 0.1);
+}
+form textarea:invalid{
+    background-color: rgba(231, 76, 60, 0.1);
 }
 
 /* --------------------------------

@@ -146,21 +146,19 @@ $(document).ready(function ($) {
 
 
 //    Form Validation
-
+    // TODO: Refractor this part, make it more elegant.
     var name = $('#name'),
         stuid = $('#stuid'),
         gender = $('#gender'),
         major = $('#major'),
         phone_number = $('#phone_number'),
-        grade = $('#grade'),
-        obey_adjustment = $('#obey_adjustment'),
         selfintro = $('#selfintro'),
         qscimage = $('#qscimage'),
         depart_imagination = $('#depart_imagination'),
         sharework = $('#sharework'),
         photo = $('#photo');
     // inclination has been declared before.
-    phone_number.keyup(function (event) {
+    phone_number.change(function (event) {
         if (phone_number.val().toString().length < 11) {
             this.setCustomValidity('手机号太短了哦~');
         } else if (phone_number.val().toString().length > 13) {
@@ -170,39 +168,44 @@ $(document).ready(function ($) {
             this.setCustomValidity('');
         }
     });
-    name.keyup(function (event) {
+    name.change(function (event) {
         if (!name.val().length) this.setCustomValidity('你叫啥名字啊？');
         else this.setCustomValidity('');
     });
-    stuid.keyup(function (event) {
+    stuid.change(function (event) {
         if (stuid.val().length != 10) this.setCustomValidity('你的学号不太对？');
         else this.setCustomValidity('');
     });
-    major.keyup(function (event) {
+    major.change(function (event) {
         if (major.val().length) this.setCustomValidity('你的专业呢，大类也行');
         else this.setCustomValidity('');
     });
-    selfintro.keyup(function (event) {
+    selfintro.change(function (event) {
         if (selfintro.val().length < 10) this.setCustomValidity('听说自我介绍越长越有机会通过哦');
         else  this.setCustomValidity('');
     });
-    depart_imagination.keyup(function (event) {
-        if (depart_imagination.val() < 10) this.setCustomValidity('第一个问题好像还没有回答');
+    depart_imagination.change(function (event) {
+        if (depart_imagination.val().length < 10) this.setCustomValidity('第一个问题好像还没有回答');
         else this.setCustomValidity('');
     });
 
-    qscimage.keyup(function (event) {
-        if(qscimage.val()<10) this.setCustomValidity('第二个问题还没有写呢');
+    qscimage.change(function (event) {
+        if(qscimage.val().length<10) this.setCustomValidity('第二个问题还没有写呢');
         else this.setCustomValidity('');
     });
 
-    sharework.keyup(function (event) {
-        if(sharework.val()<10) this.setCustomValidity('你的作品还没有填呢');
+    sharework.change(function (event) {
+        if(sharework.val().length) this.setCustomValidity('你的作品还没有填呢');
         else this.setCustomValidity('');
     });
 
-    photo.keyup(function (event) {
-        if(photo.val()<10) this.setCustomValidity('据说爆照可以让面试官先认识你~');
+    photo.change(function (event) {
+        if(photo.val().length) this.setCustomValidity('据说爆照可以让面试官先认识你~');
         else this.setCustomValidity('');
     });
+    
+//    Submit the form
+    $('#submit-button').click(function (event) {
+        event.preventDefault();
+    })
 });
