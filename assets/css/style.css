@@ -452,6 +452,20 @@ form textarea:invalid{
     background-color: rgba(231, 76, 60, 0.1);
 }
 
+.scroll-down {
+    animation: scroll-down ease-in-out running;
+    animation-duration: 0.3s;
+}
+
+@keyframes scroll-down {
+    from { opacity: 0; }
+    to { opacity: 100; }
+}
+
+.scroll-up {
+    animation: scroll-down ease-in-out running reverse;
+    animation-duration: 0.3s;
+}
 /* --------------------------------
 
 Music Control
