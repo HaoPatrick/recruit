@@ -418,7 +418,32 @@ form .pure-u-1{
     padding-bottom:10px;
 }
 
+form a {
+    margin-top:26px;
+    color: #05b3ab;
+}
 
+form label{
+    font-size:120%;
+}
+
+#submit-button{
+    background-color: #05b3ab !important;
+}
+
+.pure-form select{
+    height:2.8em !important;
+}
+
+form input{
+    line-height:1.9em !important;
+}
+
+form legend{
+    font-size:250%;
+    color:#767070 !important;
+    font-family:Tahoma, Helvetica, Arial, "Microsoft Yahei", "微软雅黑", STXihei, "华文细黑", sans-serif;
+}
 /* --------------------------------
 
 Music Control
