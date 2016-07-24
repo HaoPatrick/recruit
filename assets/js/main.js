@@ -77,19 +77,36 @@ $(document).ready(function ($) {
         return (container.parents('.touch').length > 0);
     }
 
-    signUPBtn = $('.btn');
-    signUPBtn.on('click', function (event) {
-        event.preventDefault();
-        // $('.cd-slider-wrapper').addClass('not-visible');
-        $('.cd-slider-wrapper').animate({
-            opacity: 0
-        }, 1000, function () {
-            this.remove();
-            $('.ef-signup-wrapper').removeClass('not-visible');
-        });
-        // $('.cd-slider-wrapper').remove();
+    // signUPBtn = $('.btn');
+    // signUPBtn.on('click', function (event) {
+    //     event.preventDefault();
+    //     // $('.cd-slider-wrapper').addClass('not-visible');
+    //     $('.cd-slider-wrapper').animate({
+    //         opacity: 0
+    //     }, 1000, function () {
+    //         this.remove();
+    //         $('.ef-signup-wrapper').removeClass('not-visible');
+    //     });
+    //     // $('.cd-slider-wrapper').remove();
+    //
+    // });
 
+
+//    Sign Up page transition
+    var signUP = $('.ef-signup-wrapper');
+    var signButton = $('.btn');
+    var signClose = $('.ef-close');
+    signButton.click(function () {
+        signUP.removeClass('not-visible');
+        $('.cd-slider-wrapper').addClass('not-visible');
     });
+    signClose.click(function () {
+       signUP.addClass('not-visible');
+        $('.cd-slider-wrapper').removeClass('not-visible')
+    });
+    window.onclick = function () {
+        if (event.target == signUP) signUP.addClass('not-visible');
+    };
 
 
 //    Control the background music
@@ -131,7 +148,7 @@ $(document).ready(function ($) {
     // NOTICE: these 2 functions below also change the 'not-visible' class
     function scroll_up(textarea) {
         textarea.addClass('scroll-up');
-        setTimeout(function(ta) {
+        setTimeout(function (ta) {
             ta.addClass('not-visible');
             ta.removeClass('scroll-up');
         }, 300, textarea);
@@ -140,7 +157,7 @@ $(document).ready(function ($) {
     function scroll_down(textarea) {
         textarea.addClass('scroll-down');
         textarea.removeClass('not-visible');
-        setTimeout(function(ta) {
+        setTimeout(function (ta) {
             ta.removeClass('scroll-down');
         }, 300, textarea);
     }
@@ -217,20 +234,20 @@ $(document).ready(function ($) {
     });
 
     qscimage.change(function (event) {
-        if(qscimage.val().length<10) this.setCustomValidity('第二个问题还没有写呢');
+        if (qscimage.val().length < 10) this.setCustomValidity('第二个问题还没有写呢');
         else this.setCustomValidity('');
     });
 
     sharework.change(function (event) {
-        if(sharework.val().length) this.setCustomValidity('你的作品还没有填呢');
+        if (sharework.val().length) this.setCustomValidity('你的作品还没有填呢');
         else this.setCustomValidity('');
     });
 
     photo.change(function (event) {
-        if(photo.val().length) this.setCustomValidity('据说爆照可以让面试官先认识你~');
+        if (photo.val().length) this.setCustomValidity('据说爆照可以让面试官先认识你~');
         else this.setCustomValidity('');
     });
-    
+
 //    Submit the form
     $('#submit-button').click(function (event) {
         event.preventDefault();
