@@ -94,18 +94,53 @@ $(document).ready(function ($) {
 
 //    Control the background music
 
-    var bgm=document.getElementById('cd-bgm');
-    var isPlaying=false;
-    var stopButton=$('.stop-music');
+    var bgm = document.getElementById('cd-bgm');
+    var isPlaying = false;
+    var stopButton = $('.stop-music');
     stopButton.on('click', function (event) {
         event.preventDefault();
-        if(isPlaying){
+        if (isPlaying) {
             bgm.pause();
-            stopButton.css({"background":"url(../../images/play.svg)"});
-        }else {
+            stopButton.css({"background": "url(../../images/play.svg)"});
+        } else {
             bgm.play();
-            stopButton.css({"background":"url(../../images/stop.svg)"});
+            stopButton.css({"background": "url(../../images/stop.svg)"});
         }
-        isPlaying=!isPlaying;
+        isPlaying = !isPlaying;
     });
+
+
+//    Different Questions from different department.
+    var totalQuestions = {
+        技术研发中心: 'question for tech',
+        设计与创意中心: 'question for design',
+        产品运营部门: 'question for PM',
+        人力资源部门: 'question for HR',
+        水朝夕工作室: 'question for tide',
+        新闻资讯中心: 'question for news',
+        摄影部: 'question for photograph',
+        视频团队摄像与剪辑: 'question for QSC video',
+        视频团队主持人: 'question for QSC host',
+        推广策划中心: 'question for promotion'
+    };
+    // TODO: Refactor this part of code.
+    // TODO: Add animation to the transition.
+    var inclination1 = $('#inclination1'), inclination2 = $('#inclination2');
+    var question1 = $('#ef-question1'), question2 = $('#ef-question2');
+    inclination1.change(function () {
+        if (inclination1.val() == '快选一个吧') {
+            if (!question1.hasClass('not-visible')) question1.addClass('not-visible');
+            return;
+        }
+        if (question1.hasClass('not-visible')) question1.removeClass('not-visible');
+        document.getElementById('ef-question1-content').innerHTML = totalQuestions[inclination1.val()];
+    });
+    inclination2.change(function () {
+        if (inclination2.val() == '快选一个吧') {
+            if (!question2.hasClass('not-visible')) question2.addClass('not-visible');
+            return;
+        }
+        if (question2.hasClass('not-visible')) question2.removeClass('not-visible');
+        document.getElementById('ef-question2-content').innerHTML = totalQuestions[inclination2.val()];
+    })
 });
