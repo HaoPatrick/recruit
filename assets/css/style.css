@@ -414,36 +414,41 @@ form .ef-block {
     padding-top: 10px;
 }
 
-form .pure-u-1{
-    padding-bottom:10px;
+form .pure-u-1 {
+    padding-bottom: 10px;
 }
 
 form a {
-    margin-top:26px;
+    margin-top: 26px;
     color: #05b3ab;
 }
 
-form label{
-    font-size:120%;
+form label {
+    font-size: 120%;
 }
 
-#submit-button{
+#submit-button {
     background-color: #05b3ab !important;
 }
 
-.pure-form select{
-    height:3em !important;
+.pure-form select {
+    height: 3em !important;
 }
 
-form input{
-    line-height:1.9em !important;
+form input {
+    line-height: 1.9em !important;
 }
 
-form legend{
-    font-size:250%;
-    color:#767070 !important;
-    font-family:Tahoma, Helvetica, Arial, "Microsoft Yahei", "微软雅黑", STXihei, "华文细黑", sans-serif;
+form legend {
+    font-size: 250%;
+    color: #767070 !important;
+    font-family: Tahoma, Helvetica, Arial, "Microsoft Yahei", "微软雅黑", STXihei, "华文细黑", sans-serif;
 }
+
+form input:invalid {
+    background-color: rgba(231, 76, 60, 0.3);
+}
+
 /* --------------------------------
 
 Music Control
@@ -461,9 +466,9 @@ Music Control
     -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
     overflow: hidden;
-    text-indent:100%;
-    white-space:nowrap;
-    background:  url(../../images/play.svg) no-repeat center 50%;
+    text-indent: 100%;
+    white-space: nowrap;
+    background: url(../../images/play.svg) no-repeat center 50%;
     visibility: visible;
     opacity: 1;
     -webkit-transition: opacity .3s 0s, visibility 0s .3s;
