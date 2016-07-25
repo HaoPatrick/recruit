@@ -98,11 +98,11 @@ $(document).ready(function ($) {
     var signClose = $('.ef-close');
     signButton.click(function () {
         signUP.removeClass('not-visible');
-        $('.cd-slider-wrapper').addClass('not-visible');
+        // $('.cd-slider-wrapper').addClass('not-visible');
     });
     signClose.click(function () {
        signUP.addClass('not-visible');
-        $('.cd-slider-wrapper').removeClass('not-visible')
+        // $('.cd-slider-wrapper').removeClass('not-visible')
     });
     window.onclick = function () {
         if (event.target == signUP) signUP.addClass('not-visible');
