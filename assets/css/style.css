@@ -434,6 +434,14 @@ Sign Up page
     animation-duration: .5s;
 }
 
+input .has-error{
+    background-color: rgba(231, 76, 60,0.09);
+}
+
+form .help-block{
+    color: rgb(231, 76, 60);
+    font-size:80%;
+}
 
 @keyframes fade-in {
     from {

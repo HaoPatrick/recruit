@@ -101,7 +101,7 @@ $(document).ready(function ($) {
         // $('.cd-slider-wrapper').addClass('not-visible');
     });
     signClose.click(function () {
-       signUP.addClass('not-visible');
+        signUP.addClass('not-visible');
         // $('.cd-slider-wrapper').removeClass('not-visible')
     });
     window.onclick = function () {
@@ -190,8 +190,8 @@ $(document).ready(function ($) {
 
 
 //    Form Validation
-    // TODO: Refractor this part, make it more elegant.
-    // TODO: Short_Phone number can be emoty 
+
+    // TODO: Short_Phone number can be emoty
     var name = $('#name'),
         stuid = $('#stuid'),
         gender = $('#gender'),
@@ -203,7 +203,17 @@ $(document).ready(function ($) {
         sharework = $('#sharework'),
         photo = $('#photo');
 
-    $.validate();
+    $.validate({
+        form:'#ef-only-form',
+        borderColorOnError: 'rgb(231, 76, 60)',
+        onError: function ($form) {
+            alert('Validation of form ' + $form.attr('id') + ' failed!');
+        },
+        onSuccess: function ($form) {
+            alert('The form ' + $form.attr('id') + ' is valid!');
+            return false; // Will stop the submission of the form
+        }
+    });
     // inclination has been declared before.
     // phone_number.change(function (event) {
     //     if (phone_number.val().toString().length < 11) {
@@ -253,22 +263,21 @@ $(document).ready(function ($) {
 
 //    Submit the form
     $('#submit-button').click(function (event) {
-        event.preventDefault();
-        console.log('here');
+        // event.preventDefault();
         $.post("http://recruit.haoxiangpeng.me:8080/api/save/",
             {
-                name:name.val(),
-                student_id:stuid.val(),
-                gender:gender.val(),
-                major:gender.val(),
-                phone_number:phone_number.val(),
-                self_intro:selfintro.val(),
-                question_one:qscimage.val(),
-                question_two:depart_imagination.val(),
-                inclination_one:inclination1.val(),
-                inclination_two:inclination2.val(),
-                share_work:sharework.val(),
-                photo:photo.val()
+                name: name.val(),
+                student_id: stuid.val(),
+                gender: gender.val(),
+                major: gender.val(),
+                phone_number: phone_number.val(),
+                self_intro: selfintro.val(),
+                question_one: qscimage.val(),
+                question_two: depart_imagination.val(),
+                inclination_one: inclination1.val(),
+                inclination_two: inclination2.val(),
+                share_work: sharework.val(),
+                photo: photo.val()
             }).done(function (data) {
             alert(data);
         })
