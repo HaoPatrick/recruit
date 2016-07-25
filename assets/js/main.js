@@ -191,6 +191,7 @@ $(document).ready(function ($) {
 
 //    Form Validation
     // TODO: Refractor this part, make it more elegant.
+    // TODO: Short_Phone number can be emoty 
     var name = $('#name'),
         stuid = $('#stuid'),
         gender = $('#gender'),
@@ -201,55 +202,75 @@ $(document).ready(function ($) {
         depart_imagination = $('#depart_imagination'),
         sharework = $('#sharework'),
         photo = $('#photo');
+
+    $.validate();
     // inclination has been declared before.
-    phone_number.change(function (event) {
-        if (phone_number.val().toString().length < 11) {
-            this.setCustomValidity('手机号太短了哦~');
-        } else if (phone_number.val().toString().length > 13) {
-            this.setCustomValidity('手机号太长了嘛...');
-        }
-        else {
-            this.setCustomValidity('');
-        }
-    });
-    name.change(function (event) {
-        if (!name.val().length) this.setCustomValidity('你叫啥名字啊？');
-        else this.setCustomValidity('');
-    });
-    stuid.change(function (event) {
-        if (stuid.val().length != 10) this.setCustomValidity('你的学号不太对？');
-        else this.setCustomValidity('');
-    });
-    major.change(function (event) {
-        if (major.val().length) this.setCustomValidity('你的专业呢，大类也行');
-        else this.setCustomValidity('');
-    });
-    selfintro.change(function (event) {
-        if (selfintro.val().length < 10) this.setCustomValidity('听说自我介绍越长越有机会通过哦');
-        else  this.setCustomValidity('');
-    });
-    depart_imagination.change(function (event) {
-        if (depart_imagination.val().length < 10) this.setCustomValidity('第一个问题好像还没有回答');
-        else this.setCustomValidity('');
-    });
-
-    qscimage.change(function (event) {
-        if (qscimage.val().length < 10) this.setCustomValidity('第二个问题还没有写呢');
-        else this.setCustomValidity('');
-    });
-
-    sharework.change(function (event) {
-        if (sharework.val().length) this.setCustomValidity('你的作品还没有填呢');
-        else this.setCustomValidity('');
-    });
-
-    photo.change(function (event) {
-        if (photo.val().length) this.setCustomValidity('据说爆照可以让面试官先认识你~');
-        else this.setCustomValidity('');
-    });
+    // phone_number.change(function (event) {
+    //     if (phone_number.val().toString().length < 11) {
+    //         this.setCustomValidity('手机号太短了哦~');
+    //     } else if (phone_number.val().toString().length > 13) {
+    //         this.setCustomValidity('手机号太长了嘛...');
+    //     }
+    //     else {
+    //         this.setCustomValidity('');
+    //     }
+    // });
+    // name.change(function (event) {
+    //     if (!name.val().length) this.setCustomValidity('你叫啥名字啊？');
+    //     else this.setCustomValidity('');
+    // });
+    // stuid.change(function (event) {
+    //     if (stuid.val().length != 10) this.setCustomValidity('你的学号不太对？');
+    //     else this.setCustomValidity('');
+    // });
+    // major.change(function (event) {
+    //     if (major.val().length) this.setCustomValidity('你的专业呢，大类也行');
+    //     else this.setCustomValidity('');
+    // });
+    // selfintro.change(function (event) {
+    //     if (selfintro.val().length < 10) this.setCustomValidity('听说自我介绍越长越有机会通过哦');
+    //     else  this.setCustomValidity('');
+    // });
+    // depart_imagination.change(function (event) {
+    //     if (depart_imagination.val().length < 10) this.setCustomValidity('第一个问题好像还没有回答');
+    //     else this.setCustomValidity('');
+    // });
+    //
+    // qscimage.change(function (event) {
+    //     if (qscimage.val().length < 10) this.setCustomValidity('第二个问题还没有写呢');
+    //     else this.setCustomValidity('');
+    // });
+    //
+    // sharework.change(function (event) {
+    //     if (sharework.val().length) this.setCustomValidity('你的作品还没有填呢');
+    //     else this.setCustomValidity('');
+    // });
+    //
+    // photo.change(function (event) {
+    //     if (photo.val().length) this.setCustomValidity('据说爆照可以让面试官先认识你~');
+    //     else this.setCustomValidity('');
+    // });
 
 //    Submit the form
     $('#submit-button').click(function (event) {
         event.preventDefault();
+        console.log('here');
+        $.post("http://recruit.haoxiangpeng.me:8080/api/save/",
+            {
+                name:name.val(),
+                student_id:stuid.val(),
+                gender:gender.val(),
+                major:gender.val(),
+                phone_number:phone_number.val(),
+                self_intro:selfintro.val(),
+                question_one:qscimage.val(),
+                question_two:depart_imagination.val(),
+                inclination_one:inclination1.val(),
+                inclination_two:inclination2.val(),
+                share_work:sharework.val(),
+                photo:photo.val()
+            }).done(function (data) {
+            alert(data);
+        })
     })
 });

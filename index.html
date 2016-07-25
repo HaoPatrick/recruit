@@ -237,12 +237,17 @@
                     <div class="  pure-u-1 pure-u-lg-1-1 pure-u-xl-1-3 ">
                         <label for="name">姓名</label>
                         <input class="has-error pure-u-1 pure-u-lg-1 pure-u-xl-23-24" type="text" name="name" id="name"
-                               placeholder="姓名">
+                               placeholder="姓名" data-validation="length"
+                               data-validation-length="2-10"
+                               data-validation-error-msg="你的名字不太对哦">
                     </div>
                     <div class="  pure-u-1 pure-u-lg-1-1 pure-u-xl-1-3">
                         <label for="stuid">学号</label>
-                        <input class="  pure-u-1 pure-u-lg-1 pure-u-xl-23-24" type="text" name="stuid" id="stuid"
-                               placeholder="学号">
+                        <input  class="  pure-u-1 pure-u-lg-1 pure-u-xl-23-24" type="text" name="stuid" id="stuid"
+                               placeholder="学号"
+                                data-validation="length"
+                                data-validation-length="10"
+                                data-validation-error-msg="学号一般是10位数~">
                     </div>
                     <div class="  pure-u-1 pure-u-lg-1-2 pure-u-xl-1-3">
                         <label for="gender">性别</label>
@@ -258,12 +263,17 @@
                         <label for="major">专业/大类</label>
                         <input type="text" class="  pure-u-1 pure-u-xl-23-24" name="major" id="major"
                                placeholder="专业/大类"
-                        >
+                               data-validation="length"
+                               data-validation-length="2-10"
+                               data-validation-error-msg="专业或者大类都可以啊">
                     </div>
                     <div class="pure-u-1 pure-u-lg-2-3 pure-u-xl-1-3">
                         <label for="phone_number">手机长号</label>
                         <input type="text" class="  pure-u-1 pure-u-lg-23-24 pure-u-xl-23-24" name="phone_number"
                                id="phone_number" placeholder="手机长号"
+                               data-validation="length"
+                               data-validation-length="10-13"
+                               data-validation-error-msg="手机号在10-13位之间吧"
                         >
                     </div>
                     <div class=" pure-u-1 pure-u-lg-1-3 pure-u-xl-1-6">
@@ -326,35 +336,50 @@
 
                     <div class="pure-u-1-1">
                         <label for="selfintro">自我介绍</label>
-                        <textarea rows="10" class=" pure-u-1" name="selfintro" id="selfintro"></textarea>
+                        <textarea rows="10" class=" pure-u-1" name="selfintro" id="selfintro"
+                                  data-validation="length"
+                                  data-validation-length="10-1000"
+                                  data-validation-error-msg="自我介绍写多一点能增加录取机率哦"></textarea>
                     </div>
 
                     <div id="ef-question1" class="not-visible pure-u-1 ">
                         <label id="ef-question1-content" for="qscimage">对求是潮的印象</label>
-                        <textarea rows="10" name="qscimage" class=" pure-u-1" id="qscimage"></textarea>
+                        <textarea rows="10" name="qscimage" class=" pure-u-1" id="qscimage"
+                                  data-validation="length"
+                                  data-validation-length="10-1000"
+                                  data-validation-error-msg="这些问题里面可能有玄机~"></textarea>
                     </div>
 
                     <div id="ef-question2" class="not-visible pure-u-1 ">
                         <label id="ef-question2-content" for="depart_imagination">对所报部门的设想</label>
                 <textarea rows="10" name="depart_imagination" id="depart_imagination"
-                          class=" pure-u-1"></textarea>
+                          class=" pure-u-1"
+                          data-validation="length"
+                          data-validation-length="10-1000"
+                          data-validation-error-msg="这些问题里面可能有玄机~"></textarea>
                     </div>
 
                     <div class="pure-u-1 pure-u-xl-1-2">
                         <label for="sharework">与我们分享你的作品 <a href="https://box.zjuqsc.com" target="_blank">求是潮Box<img
                                 src="images/link.svg" width="13px"></a> </label>
                         <input type="text" placeholder="请填写求是潮Box提取码，多个作品用英文逗号分隔" name="sharework"
-                               class="pure-u-xl-23-24  pure-u-1" id="sharework">
+                               class="pure-u-xl-23-24  pure-u-1" id="sharework"
+                               data-validation="length"
+                               data-validation-length="1-100"
+                               data-validation-error-msg="作品嘛，啥都可以啊">
                     </div>
 
                     <div class="pure-u-1 pure-u-xl-1-2">
                         <label for="photo">爆照</label>
                         <input type="text" placeholder="请填写求是潮Box提取码，多个作品用英文逗号分隔" class="pure-u-1-1 "
-                               name="photo" id="photo">
+                               name="photo" id="photo"
+                               data-validation="length"
+                               data-validation-length="1-100"
+                               data-validation-error-msg="可以是证件照也可以美颜~">
                     </div>
                     <div class="pure-u-1">
                         <input id="submit-button" class="pure-button pure-button-primary pure-u-1" type="submit"
-                               value="提交报名表">
+                               value="提交报名表" >
                     </div>
                 </div>
             </fieldset>
@@ -366,6 +391,7 @@
 
 <script src="assets/js/jquery-2.1.4.js"></script>
 <script src="assets/js/jquery.mobile.custom.min.js"></script>
+<script src="assets/js/jquery.form-validator.min.js"></script>
 <script src="assets/js/main.js"></script>
 <audio id="cd-bgm" loop preload="none">
     <source src="assets/bgm.mp3"/>
