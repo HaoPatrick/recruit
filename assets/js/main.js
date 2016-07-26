@@ -4,6 +4,7 @@
  */
 
 $(document).ready(function ($) {
+    var startTime=new Date().getTime();
     var sliderContainers = $('.cd-slider-wrapper');
 
     if (sliderContainers.length > 0) initBlockSlider(sliderContainers);
@@ -204,13 +205,14 @@ $(document).ready(function ($) {
         photo = $('#photo');
 
     $.validate({
-        form:'#ef-only-form',
+        form: '#ef-only-form',
         borderColorOnError: 'rgb(231, 76, 60)',
         onError: function ($form) {
-            alert('Validation of form ' + $form.attr('id') + ' failed!');
         },
         onSuccess: function ($form) {
-            alert('The form ' + $form.attr('id') + ' is valid!');
+            console.log('Validate Successful');
+            submitForm();
+            alert('提交成功，期待你的优秀表现~ 重复提交会覆盖旧的报名表')
             return false; // Will stop the submission of the form
         }
     });
@@ -262,8 +264,10 @@ $(document).ready(function ($) {
     // });
 
 //    Submit the form
-    $('#submit-button').click(function (event) {
+    function submitForm() {
         // event.preventDefault();
+        var endTime=new Date().getTime();
+        console.log(endTime-startTime);
         $.post("http://recruit.haoxiangpeng.me:8080/api/save/",
             {
                 name: name.val(),
@@ -277,9 +281,10 @@ $(document).ready(function ($) {
                 inclination_one: inclination1.val(),
                 inclination_two: inclination2.val(),
                 share_work: sharework.val(),
-                photo: photo.val()
-            }).done(function (data) {
-            alert(data);
-        })
-    })
+                photo: photo.val(),
+                userAgent:navigator.userAgent,
+                timeDuration:endTime-startTime
+            })
+    }
+    
 });
