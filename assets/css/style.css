@@ -592,3 +592,17 @@ Success Modal
     border:1px solid #888;
     width:80%;
 }
+
+/* --------------------------------
+
+Markdown Support
+
+-------------------------------- */
+ #markdown_result{
+    display: block;
+    vertical-align: top;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: rgba(149, 165, 166,0.3);
+}

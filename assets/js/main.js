@@ -273,7 +273,7 @@ $(document).ready(function ($) {
                 name: name.val(),
                 student_id: stuid.val(),
                 gender: gender.val(),
-                major: gender.val(),
+                major: major.val(),
                 phone_number: phone_number.val(),
                 self_intro: selfintro.val(),
                 question_one: qscimage.val(),
@@ -282,9 +282,19 @@ $(document).ready(function ($) {
                 inclination_two: inclination2.val(),
                 share_work: sharework.val(),
                 photo: photo.val(),
-                userAgent:navigator.userAgent,
-                timeDuration:endTime-startTime
+                user_agent:navigator.userAgent,
+                time_spend:endTime-startTime
             })
     }
-    
+
 });
+
+new Vue({
+    el:'#ef-only-form',
+    data:{
+        input:'# 报名表支持Markdown语法\n [Markdown介绍](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)'
+    },
+    filters:{
+        marked:marked
+    }
+})
