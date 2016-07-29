@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="assets/css/pure.css">
     <link rel="stylesheet" href="assets/css/grids-responsive-min.css">
     <script src="assets/js/modernizr.js"></script>
+    <script src="assets/js/vue.js"></script>
     <title>求是潮秋季纳新</title>
 </head>
 <body>
@@ -334,35 +335,37 @@
                         </select>
                     </div>
 
-                    <div class="pure-u-1-1">
+                    <div class="pure-u-1-1 ef-markdown-padding">
                         <label for="selfintro">自我介绍</label>
 
-                        <textarea rows="10" class=" pure-u-1" name="selfintro" id="selfintro"
+                        <textarea rows="10" name="selfintro" id="selfintro"
                                   data-validation="length"
                                   data-validation-length="10-1000"
                                   data-validation-error-msg="自我介绍写多一点能增加录取机率哦"
-                                  v-model="input"></textarea>
-
+                                  v-model="input_one"></textarea>
+                        <div class="ef-markdown" v-html="input_one|marked"></div>
                     </div>
 
-                    <div id="ef-question1" class="not-visible pure-u-1 ">
+                    <div id="ef-question1" class="not-visible pure-u-1 ef-markdown-padding ">
                         <label id="ef-question1-content" for="qscimage">对求是潮的印象</label>
                         <textarea rows="10" name="qscimage" class=" pure-u-1" id="qscimage"
                                   data-validation="length"
                                   data-validation-length="10-1000"
-                                  data-validation-error-msg="这些问题里面可能有玄机~"></textarea>
+                                  data-validation-error-msg="这些问题里面可能有玄机~"
+                                  v-model="input_two"></textarea>
+                        <div class="ef-markdown" v-html="input_two|marked"></div>
                     </div>
 
-                    <div id="ef-question2" class="not-visible pure-u-1 ">
+                    <div id="ef-question2" class="not-visible pure-u-1 ef-markdown-padding ">
                         <label id="ef-question2-content" for="depart_imagination">对所报部门的设想</label>
                 <textarea rows="10" name="depart_imagination" id="depart_imagination"
                           class=" pure-u-1"
                           data-validation="length"
                           data-validation-length="10-1000"
-                          data-validation-error-msg="这些问题里面可能有玄机~"></textarea>
+                          data-validation-error-msg="这些问题里面可能有玄机~"
+                          v-model="input_three"></textarea>
+                        <div class="ef-markdown" v-html="input_three|marked"></div>
                     </div>
-                    <div id="markdown_result" class="pure-u-1" v-html="input|marked"></div>
-
                     <div class="pure-u-1 pure-u-xl-1-2">
                         <label for="sharework">与我们分享你的作品 <a href="https://box.zjuqsc.com" target="_blank">求是潮Box<img
                                 src="images/link.svg" width="13px"></a> </label>
@@ -396,7 +399,6 @@
 
 <script src="assets/js/jquery-2.1.4.js"></script>
 <script src="assets/js/marked.min.js"></script>
-<script src="assets/js/vue.js"></script>
 <script src="assets/js/jquery.mobile.custom.min.js"></script>
 <script src="assets/js/jquery.form-validator.min.js"></script>
 <script src="assets/js/main.js"></script>

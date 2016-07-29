@@ -289,10 +289,12 @@ $(document).ready(function ($) {
 
 });
 
-new Vue({
+var demo=new Vue({
     el:'#ef-only-form',
     data:{
-        input:'# 报名表支持Markdown语法\n [Markdown介绍](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)'
+        input_one:'# 报名表支持Markdown语法\n [Markdown介绍](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)',
+        input_two:'',
+        input_three:''
     },
     filters:{
         marked:marked

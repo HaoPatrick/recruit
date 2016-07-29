@@ -598,11 +598,29 @@ Success Modal
 Markdown Support
 
 -------------------------------- */
- #markdown_result{
-    display: block;
-    vertical-align: top;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    background-color: rgba(149, 165, 166,0.3);
+
+textarea,.ef-markdown{
+    display: inline-block !important;
+    width: 49%!important;
+    height: 100%!important;
+    vertical-align: top!important;
+    -webkit-box-sizing: border-box!important;
+    -moz-box-sizing: border-box!important;
+    box-sizing: border-box!important;
+    padding: 0 20px!important;
+    background-color: rgba(149, 165, 166,0.3)!important;
+}
+
+textarea{
+    border:none!important;
+    border-right:1px solid #ccc!important;
+    resize: none!important;
+    outline:none!important;
+    background-color: #f6f6f6!important;
+    font-size:14px!important;
+    padding:20px!important;
+}
+
+.ef-markdown-padding{
+    padding-bottom:50px !important;
 }
