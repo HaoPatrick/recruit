@@ -212,7 +212,7 @@ $(document).ready(function ($) {
         onSuccess: function ($form) {
             console.log('Validate Successful');
             submitForm();
-            alert('提交成功，期待你的优秀表现~ 重复提交会覆盖旧的报名表')
+            // alert('提交成功，期待你的优秀表现~ 重复提交会覆盖旧的报名表')
             return false; // Will stop the submission of the form
         }
     });
@@ -267,7 +267,6 @@ $(document).ready(function ($) {
     function submitForm() {
         // event.preventDefault();
         var endTime=new Date().getTime();
-        console.log(endTime-startTime);
         $.post("http://recruit.haoxiangpeng.me:8080/api/save/",
             {
                 name: name.val(),
@@ -284,7 +283,16 @@ $(document).ready(function ($) {
                 photo: photo.val(),
                 user_agent:navigator.userAgent,
                 time_spend:endTime-startTime
-            })
+            }).done(function (response) {
+            console.log(response)
+            if(response =='OK'){
+                alert('提交成功，期待你的优秀表现~ 重复提交会覆盖旧的报名表');
+                signUP.addClass('not-visible');
+            }
+            else {
+                alert('遇到了未知错误QAQ，请联系攻城狮哥哥~ haoxiangpeng@hotmail.com')
+            }
+        })
     }
 
 });
